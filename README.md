@@ -1,4 +1,4 @@
-<img src="resources/banner.png">
+<img alt="Banner" src="resources/banner.png">
 
 # OZZOBot
 A dumb joke bot I made for <a href="discord.gg/M3BCFDx3fF">OZZOYT's Discord Server</a>
