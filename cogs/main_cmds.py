@@ -84,6 +84,10 @@ class MainCommands(commands.Cog):
                         member: discord.Member = commands.parameter(default=None,
                                                                     description="the member you wanna crack")):
         try:
+            if member is None:
+                if ctx.message.reference:
+                    member = ctx.message.reference.resolved.author
+
             match member:
                 case None:
                     await ctx.reply("damn... you dont have anyone to crack? thats kinda sad")
@@ -97,8 +101,8 @@ class MainCommands(commands.Cog):
                 case _:
                     await member.send(f"{ctx.author.mention} is cracking you\n"
                                       f"do you like it?")
-        except discord.Forbidden:
-            await ctx.send(f"i cant send dms to **{member.name}** or discord denied the request (it happens sometimes)")
+
+            await ctx.send(f"youre now cracking {member.mention}")
         except Exception as ex:
             await ctx.send(str(ex))
 
@@ -184,7 +188,7 @@ class MainCommands(commands.Cog):
                     color=discord.Color.blurple()
                 )
 
-                embed.set_author(name=str(ctx.author.name), icon_url=ctx.author.avatar.url)
+                embed.set_author(name=str(ctx.author.name), icon_url=ctx.author.display_avatar.url)
                 embed.set_footer(text=f"User ID: {ctx.author.id}")
 
                 await wh.send(embed=embed)
@@ -195,6 +199,83 @@ class MainCommands(commands.Cog):
                            f"-# you can always dm demiomad tho, also the feedback id is your message id")
         except Exception as ex:
             await ctx.send(str(ex))
+
+    @commands.command(name="pat", description="pats a member")
+    async def pat_cmd(self, ctx: commands.Context, member: discord.Member = commands.parameter(default=None,
+                                                    description="the member you wanna pat")):
+        try:
+            if member is None:
+                if ctx.message.reference:
+                    member = ctx.message.reference.resolved.author
+
+            match member:
+                case _ if member == ctx.author or member is None:
+                    await ctx.send("oh my... you dont have anyone to pat?? dw i feel you")
+                    return
+
+                case self.bot.user:
+                    await ctx.reply("im a clanker")
+                    return
+
+                case _:
+                    await member.send(f"{ctx.author.mention} is patting you\n"
+                                      f"awh... how cute")
+
+            await ctx.send(f"you are patting **{member.name}** now")
+        except Exception as ex:
+            await ctx.send(str(ex))
+
+    @commands.command(name="cuddle", description="lets you cuddle with a member")
+    async def cuddle_cmd(self, ctx: commands.Context, member: discord.Member = commands.parameter(default=None,
+                                                                                               description="the member you wanna cuddle with")):
+        try:
+            if member is None:
+                if ctx.message.reference:
+                    member = ctx.message.reference.resolved.author
+
+            match member:
+                case _ if member == ctx.author or member is None:
+                    await ctx.send("you dont have anyone to cuddle with? well im a clanker so i unfortunately cant do that")
+                    return
+
+                case self.bot.user:
+                    await ctx.reply("bro im a clanker")
+                    return
+
+                case _:
+                    await member.send(f"{ctx.author.mention} is cuddling with you")
+
+            await ctx.send(f"you are cuddling with **{member.name}**")
+        except Exception as ex:
+            await ctx.send(str(ex))
+
+    @commands.command(name="hug", description="lets you hug a member")
+    async def hug_cmd(self, ctx: commands.Context, member: discord.Member = commands.parameter(default=None,
+                                                                                                  description="the member you wanna hug")):
+        try:
+            if member is None:
+                if ctx.message.reference:
+                    member = ctx.message.reference.resolved.author
+
+            match member:
+                case _ if member == ctx.author or member is None:
+                    await ctx.send("you dont have anyone to hug? fine")
+                    member = self.bot.user
+
+                case _:
+                    await member.send(f"{ctx.author.mention} is hugging you")
+
+            await ctx.send(f"you are hugging **{member.name}**")
+        except Exception as ex:
+            await ctx.send(str(ex))
+
+    @commands.command(name="ozzo", description="ozzo")
+    async def ozzo_cmd(self, ctx: commands.Context):
+        if ctx.author.id == 1474293589683994655:
+            await ctx.reply("no way its ozzo!!! hi ozzo-chan!!")
+            return
+
+        await ctx.send("ozzo")
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(MainCommands(bot))
