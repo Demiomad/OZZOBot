@@ -3,9 +3,7 @@ from discord.ext import commands
 
 class OzzoBot(commands.Bot):
     def __init__(self):
-        intents = discord.Intents.default()
-        intents.message_content = True
-        intents.members = True
+        intents = discord.Intents.all()
         super().__init__(command_prefix="ozzo!", intents=intents, help_command=None)
 
         self.activity = discord.Game(name="with my dihh")

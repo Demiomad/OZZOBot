@@ -91,6 +91,7 @@ class MainCommands(commands.Cog):
             match member:
                 case None:
                     await ctx.reply("damn... you dont have anyone to crack? thats kinda sad")
+                    return
 
                 case ctx.author:
                     await member.send("ejaculation")
