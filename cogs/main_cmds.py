@@ -94,9 +94,11 @@ class MainCommands(commands.Cog):
 
                 case ctx.author:
                     await member.send("ejaculation")
+                    return
 
                 case self.bot.user:
                     await ctx.reply("you cant crack me im a clanker")
+                    return
 
                 case _:
                     await member.send(f"{ctx.author.mention} is cracking you\n"
