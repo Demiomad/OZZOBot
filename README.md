@@ -1,9 +1,8 @@
-> [!NOTE]
-> **OZZOBot is now available to use in OZZO's server!**
-
 <img alt="Banner" src="resources/banner.png">
 
 # OZZOBot
+> [!NOTE]
+> **OZZOBot is now available to use in OZZO's server!**
 
 A dumb joke bot I made for <a href="https://discord.gg/M3BCFDx3fF">OZZOYT's Discord Server</a>
 
