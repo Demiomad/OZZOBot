@@ -1,7 +1,10 @@
 <img alt="Banner" src="resources/banner.png">
 
 # OZZOBot
-A dumb joke bot I made for <a href="discord.gg/M3BCFDx3fF">OZZOYT's Discord Server</a>
+> [!NOTE]
+> **OZZOBOT IS NOW ON THE SERVER!!**
+
+A dumb joke bot I made for <a href="https://discord.gg/M3BCFDx3fF">OZZOYT's Discord Server</a>
 
 # How do I run it?
 - Install Python
