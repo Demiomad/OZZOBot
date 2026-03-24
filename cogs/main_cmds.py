@@ -102,7 +102,7 @@ class MainCommands(commands.Cog):
                     await member.send(f"{ctx.author.mention} is cracking you\n"
                                       f"do you like it?")
 
-            await ctx.send(f"youre now cracking {member.mention}")
+            await ctx.send(f"you are cracking {member.mention}")
         except Exception as ex:
             await ctx.send(str(ex))
 
@@ -221,7 +221,7 @@ class MainCommands(commands.Cog):
                     await member.send(f"{ctx.author.mention} is patting you\n"
                                       f"awh... how cute")
 
-            await ctx.send(f"you are patting **{member.name}** now")
+            await ctx.send(f"you are patting {member.mention}")
         except Exception as ex:
             await ctx.send(str(ex))
 
@@ -245,7 +245,7 @@ class MainCommands(commands.Cog):
                 case _:
                     await member.send(f"{ctx.author.mention} is cuddling with you")
 
-            await ctx.send(f"you are cuddling with **{member.name}**")
+            await ctx.send(f"you are cuddling with {member.mention}")
         except Exception as ex:
             await ctx.send(str(ex))
 
@@ -265,7 +265,7 @@ class MainCommands(commands.Cog):
                 case _:
                     await member.send(f"{ctx.author.mention} is hugging you")
 
-            await ctx.send(f"you are hugging **{member.name}**")
+            await ctx.send(f"you are hugging {member.mention}")
         except Exception as ex:
             await ctx.send(str(ex))
 
