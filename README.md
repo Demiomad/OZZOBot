@@ -1,14 +1,16 @@
+> [!NOTE]
+> **OZZOBot is now available to use in OZZO's server!**
+
 <img alt="Banner" src="resources/banner.png">
 
 # OZZOBot
-> [!NOTE]
-> **OZZOBOT IS NOW ON THE SERVER!!**
 
 A dumb joke bot I made for <a href="https://discord.gg/M3BCFDx3fF">OZZOYT's Discord Server</a>
 
 # How do I run it?
 - Install Python
 - Create a bot in the Discord Developer Portal
+- `git clone` this repo, or download it as a .zip
 - Run this command to install the requirements:
 ```shell
 pip install -r requirements.txt
