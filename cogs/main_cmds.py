@@ -80,6 +80,7 @@ class MainCommands(commands.Cog):
             await ctx.send(embed=embed)
 
     @commands.command(name="crack", description="cracks a member in this server")
+    @commands.cooldown(1, 15, commands.BucketType.user)
     async def crack_cmd(self, ctx: commands.Context,
                         member: discord.Member = commands.parameter(default=None,
                                                                     description="the member you wanna crack")):
@@ -204,6 +205,7 @@ class MainCommands(commands.Cog):
             await ctx.send(str(ex))
 
     @commands.command(name="pat", description="pats a member")
+    @commands.cooldown(1, 15, commands.BucketType.user)
     async def pat_cmd(self, ctx: commands.Context, member: discord.Member = commands.parameter(default=None,
                                                     description="the member you wanna pat")):
         try:
@@ -229,6 +231,7 @@ class MainCommands(commands.Cog):
             await ctx.send(str(ex))
 
     @commands.command(name="cuddle", description="lets you cuddle with a member")
+    @commands.cooldown(1, 15, commands.BucketType.user)
     async def cuddle_cmd(self, ctx: commands.Context, member: discord.Member = commands.parameter(default=None,
                                                                                                description="the member you wanna cuddle with")):
         try:
@@ -253,6 +256,7 @@ class MainCommands(commands.Cog):
             await ctx.send(str(ex))
 
     @commands.command(name="hug", description="lets you hug a member")
+    @commands.cooldown(1, 15, commands.BucketType.user)
     async def hug_cmd(self, ctx: commands.Context, member: discord.Member = commands.parameter(default=None,
                                                                                                   description="the member you wanna hug")):
         try:
