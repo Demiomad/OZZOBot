@@ -14,7 +14,13 @@ class Events(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message):
-        if not message.author.bot and random.random() < 0.1 and message.channel.id in utils.channels_with_sound:
+        if message.author.bot:
+            return
+
+        if (utils.is_valid_reply(message) and message.reference.resolved.author == self.bot.user) and not message.content.startswith(self.bot.command_prefix):
+            await message.reply(random.choice(utils.RESPONSES))
+
+        if random.random() < 0.1 and message.channel.id in utils.channels_with_sound:
             await message.add_reaction("🤤")
             await message.channel.send(utils.get_random_sound())
 

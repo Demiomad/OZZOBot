@@ -267,7 +267,7 @@ class MainCommands(commands.Cog):
             match member:
                 case _ if member == ctx.author or member is None:
                     await ctx.send("you dont have anyone to hug? fine")
-                    member = self.bot.user
+                    return
 
                 case _:
                     await member.send(f"{ctx.author.mention} is hugging you")
