@@ -18,7 +18,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\crack.gif" />
     <EmbeddedResource Include="Resources\cuddle.gif" />
-    <EmbeddedResource Include="Resources\goon.gif" />
     <EmbeddedResource Include="Resources\hug.png" />
     <EmbeddedResource Include="Resources\tickle.gif" />
   </ItemGroup>

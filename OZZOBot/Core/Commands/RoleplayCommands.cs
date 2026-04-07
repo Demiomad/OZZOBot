@@ -48,7 +48,7 @@ namespace OZZOBot.Core.Commands
                 msg.AddFile("tickle.gif", stream)
                     .AddEmbed(embed);
 
-                await ctx.EditResponseAsync(msg);
+                await ctx.RespondAsync(msg);
             }
 
             try
@@ -151,7 +151,7 @@ namespace OZZOBot.Core.Commands
                 msg.AddFile("hug.png", stream);
                 msg.AddEmbed(embed);
 
-                await ctx.EditResponseAsync(msg);
+                await ctx.RespondAsync(msg);
             }
 
             try
@@ -202,7 +202,7 @@ namespace OZZOBot.Core.Commands
                 msg.AddFile("cuddle.gif", stream);
                 msg.AddEmbed(embed);
 
-                await ctx.EditResponseAsync(msg);
+                await ctx.RespondAsync(msg);
             }
 
             try
