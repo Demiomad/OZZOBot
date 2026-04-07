@@ -34,7 +34,7 @@ namespace OZZOBot
                             {
                                 Configuration = new TextCommandConfiguration()
                                 {
-                                    PrefixResolver = new DefaultPrefixResolver(true, "ozzo!", "ozzoyt!", "ozzobot!").ResolvePrefixAsync,
+                                    PrefixResolver = new DefaultPrefixResolver(true, "ozzo!").ResolvePrefixAsync,
                                     IgnoreBots = true
                                 }
                             });

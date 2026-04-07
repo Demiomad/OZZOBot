@@ -10,7 +10,6 @@ using DSharpPlus.Entities;
 
 namespace OZZOBot.Core.Commands
 {
-    [Description("utility commands")]
     public class UtilityCommands
     {
         [Command("ping"), Description("pong!")]

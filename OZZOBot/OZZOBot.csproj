@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <None Remove="Resources\crack.gif" />
-    <None Remove="Resources\cuddle.gif" />
+    <None Remove="Resources\cuddle.png" />
     <None Remove="Resources\goon.gif" />
     <None Remove="Resources\hug.png" />
     <None Remove="Resources\tickle.gif" />
@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\crack.gif" />
-    <EmbeddedResource Include="Resources\cuddle.gif" />
+    <EmbeddedResource Include="Resources\cuddle.png" />
     <EmbeddedResource Include="Resources\hug.png" />
     <EmbeddedResource Include="Resources\tickle.gif" />
   </ItemGroup>

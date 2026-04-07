@@ -5,13 +5,13 @@ using DSharpPlus.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace OZZOBot.Core.Commands
 {
-    [Description("do random shi with people")]
     public class RoleplayCommands
     {
         [Command("tickle"), Description("lets you tickle a member")]
@@ -30,26 +30,25 @@ namespace OZZOBot.Core.Commands
                 return;
             }
 
-            using (var stream = Utils.GetStream("OZZOBot.Resources.tickle.gif"))
+            var data = Utils.GetResource("OZZOBot.Resources.tickle.gif");
+            var embed = new DiscordEmbedBuilder()
             {
-                var embed = new DiscordEmbedBuilder()
+                Title = $"{ctx.User.Username} is hugging {member.Username}",
+                ImageUrl = Utils.GetAttachmentUrl("attach.png"),
+                Footer = new DiscordEmbedBuilder.EmbedFooter()
                 {
-                    Title = $"{ctx.User.Username} is tickling {member.Username}",
-                    ImageUrl = Utils.GetAttachmentUrl("tickle.gif"),
-                    Footer = new DiscordEmbedBuilder.EmbedFooter()
-                    {
-                        Text = Utils.Subtexts[Random.Shared.Next(Utils.Subtexts.Length)]
-                    },
-                    Color = DiscordColor.Blurple
-                };
+                    Text = Utils.Subtexts[Random.Shared.Next(Utils.Subtexts.Length)]
+                },
+                Color = DiscordColor.Blurple
+            };
 
-                var msg = new DiscordMessageBuilder();
+            var msg = new DiscordMessageBuilder();
+            using var ms = new MemoryStream(data);
 
-                msg.AddFile("tickle.gif", stream)
-                    .AddEmbed(embed);
+            msg.AddFile("attach.png", ms)
+                .AddEmbed(embed);
 
-                await ctx.RespondAsync(msg);
-            }
+            await ctx.RespondAsync(msg);
 
             try
             {
@@ -81,26 +80,25 @@ namespace OZZOBot.Core.Commands
                 return;
             }
 
-            using (var stream = Utils.GetStream("OZZOBot.Resources.crack.gif"))
+            var data = Utils.GetResource("OZZOBot.Resources.crack.gif");
+            var embed = new DiscordEmbedBuilder()
             {
-                var embed = new DiscordEmbedBuilder()
+                Title = $"{ctx.User.Username} is cracking {member.Username}",
+                ImageUrl = Utils.GetAttachmentUrl("attach.png"),
+                Footer = new DiscordEmbedBuilder.EmbedFooter()
                 {
-                    Title = $"{ctx.User.Username} is cracking {member.Username}",
-                    ImageUrl = Utils.GetAttachmentUrl("crack.gif"),
-                    Footer = new DiscordEmbedBuilder.EmbedFooter()
-                    {
-                        Text = Utils.Subtexts[Random.Shared.Next(Utils.Subtexts.Length)]
-                    },
-                    Color = DiscordColor.Blurple
-                };
+                    Text = Utils.Subtexts[Random.Shared.Next(Utils.Subtexts.Length)]
+                },
+                Color = DiscordColor.Blurple
+            };
 
-                var msg = new DiscordMessageBuilder();
+            var msg = new DiscordMessageBuilder();
+            using var ms = new MemoryStream(data);
 
-                msg.AddFile("crack.gif", stream);
-                msg.AddEmbed(embed);
+            msg.AddFile("attach.png", ms)
+                .AddEmbed(embed);
 
-                await ctx.EditResponseAsync(msg);
-            }
+            await ctx.RespondAsync(msg);
 
             try
             {
@@ -133,26 +131,25 @@ namespace OZZOBot.Core.Commands
                 return;
             }
 
-            using (var stream = Utils.GetStream("OZZOBot.Resources.hug.png"))
+            var data = Utils.GetResource("OZZOBot.Resources.hug.png");
+            var embed = new DiscordEmbedBuilder()
             {
-                var embed = new DiscordEmbedBuilder()
+                Title = $"{ctx.User.Username} is hugging {member.Username}",
+                ImageUrl = Utils.GetAttachmentUrl("attach.png"),
+                Footer = new DiscordEmbedBuilder.EmbedFooter()
                 {
-                    Title = $"{ctx.User.Username} is hugging {member.Username}",
-                    ImageUrl = Utils.GetAttachmentUrl("hug.png"),
-                    Footer = new DiscordEmbedBuilder.EmbedFooter()
-                    {
-                        Text = Utils.Subtexts[Random.Shared.Next(Utils.Subtexts.Length)]
-                    },
-                    Color = DiscordColor.Blurple
-                };
+                    Text = Utils.Subtexts[Random.Shared.Next(Utils.Subtexts.Length)]
+                },
+                Color = DiscordColor.Blurple
+            };
 
-                var msg = new DiscordMessageBuilder();
+            var msg = new DiscordMessageBuilder();
+            using var ms = new MemoryStream(data);
 
-                msg.AddFile("hug.png", stream);
-                msg.AddEmbed(embed);
+            msg.AddFile("attach.png", ms)
+                .AddEmbed(embed);
 
-                await ctx.RespondAsync(msg);
-            }
+            await ctx.RespondAsync(msg);
 
             try
             {
@@ -184,26 +181,25 @@ namespace OZZOBot.Core.Commands
                 return;
             }
 
-            using (var stream = Utils.GetStream("OZZOBot.Resources.cuddle.gif"))
+            var data = Utils.GetResource("OZZOBot.Resources.cuddle.png");
+            var embed = new DiscordEmbedBuilder()
             {
-                var embed = new DiscordEmbedBuilder()
+                Title = $"{ctx.User.Username} is cuddling with {member.Username}",
+                ImageUrl = Utils.GetAttachmentUrl("attach.png"),
+                Footer = new DiscordEmbedBuilder.EmbedFooter()
                 {
-                    Title = $"{ctx.User.Username} is cuddling with {member.Username}",
-                    ImageUrl = Utils.GetAttachmentUrl("cuddle.gif"),
-                    Footer = new DiscordEmbedBuilder.EmbedFooter()
-                    {
-                        Text = Utils.Subtexts[Random.Shared.Next(Utils.Subtexts.Length)]
-                    },
-                    Color = DiscordColor.Blurple
-                };
+                    Text = Utils.Subtexts[Random.Shared.Next(Utils.Subtexts.Length)]
+                },
+                Color = DiscordColor.Blurple
+            };
 
-                var msg = new DiscordMessageBuilder();
+            var msg = new DiscordMessageBuilder();
+            using var ms = new MemoryStream(data);
 
-                msg.AddFile("cuddle.gif", stream);
-                msg.AddEmbed(embed);
+            msg.AddFile("attach.png", ms)
+                .AddEmbed(embed);
 
-                await ctx.RespondAsync(msg);
-            }
+            await ctx.RespondAsync(msg);
 
             try
             {

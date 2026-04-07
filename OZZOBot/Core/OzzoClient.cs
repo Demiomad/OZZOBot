@@ -12,7 +12,7 @@ namespace OZZOBot.Core
     public class OzzoClient : IHostedService
     {
         private DiscordClient _client;
-        private DiscordActivity _activity;
+        private readonly DiscordActivity _activity;
 
         public OzzoClient(DiscordClient client)
         {

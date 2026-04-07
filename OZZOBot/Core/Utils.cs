@@ -27,9 +27,10 @@ namespace OZZOBot.Core
         public static string[] Subtexts = ["someone rail me >///<", "i just nut...", "uhhh", "Your device ran into a pro",
             "n-ngh..", "goon"];
 
-        public static string[] CrackSubtexts = ["y-you like it don't you~? >///<", "do you like it?"];
+        public static string[] CrackSubtexts = ["y-you like it don't you~? >///<", "do you like it?", ">///<", "is ts a sign"];
 
         public static List<ulong> ChannelsWithSound = [];
+        private static Dictionary<string, byte[]> CachedResources = [];
 
         public static string GetSound(int tildeAmount)
         {
@@ -37,10 +38,20 @@ namespace OZZOBot.Core
             return Sounds[Random.Shared.Next(Sounds.Length)] + tildes;
         }
 
-        public static Stream? GetStream(string resName)
+        public static byte[] GetResource(string resName)
         {
+            if (CachedResources.TryGetValue(resName, out var result))
+                return result;
+
             var asm = Assembly.GetExecutingAssembly();
-            return asm.GetManifestResourceStream(resName);
+            var stream = asm.GetManifestResourceStream(resName);
+            var ms = new MemoryStream();
+
+            stream?.CopyTo(ms);
+            var array = ms.ToArray();
+
+            CachedResources.Add(resName, array);
+            return array;
         }
 
         public static string GetAttachmentUrl(string fileName)
