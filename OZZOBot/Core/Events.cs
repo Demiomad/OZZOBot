@@ -16,7 +16,7 @@ namespace OZZOBot.Core
             if (e.Author.IsBot) return;
 
             var mentionsBot = e.MentionedUsers.Contains(client.CurrentUser)
-                || e.Message.ReferencedMessage is not null;
+                || (e.Message.ReferencedMessage is not null && e.Message.ReferencedMessage.Author == client.CurrentUser);
 
             if (mentionsBot && !e.Message.Content.StartsWith("ozzo!"))
                 await e.Message.RespondAsync(Utils.Responses[Random.Shared.Next(Utils.Responses.Length)]);
