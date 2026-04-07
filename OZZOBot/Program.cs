@@ -22,7 +22,7 @@ namespace OZZOBot
                 .ConfigureServices((ctx, services) =>
                 {
                     services.AddHostedService<OzzoClient>()
-                        .AddDiscordClient(token, DiscordIntents.All)
+                        .AddDiscordClient(token!, DiscordIntents.All)
                         .AddCommandsExtension((_, ext) =>
                         {
                             ext.AddCommands<JokeCommands>();

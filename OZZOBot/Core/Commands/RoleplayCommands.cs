@@ -20,13 +20,13 @@ namespace OZZOBot.Core.Commands
         {
             if (member is null || member == ctx.User)
             {
-                await ctx.EditResponseAsync("at least mention someone man");
+                await ctx.RespondAsync("at least mention someone man");
                 return;
             }
 
             if (member == ctx.Client.CurrentUser)
             {
-                await ctx.EditResponseAsync("i cant tickle myself");
+                await ctx.RespondAsync("i cant tickle myself");
                 return;
             }
 
@@ -71,13 +71,13 @@ namespace OZZOBot.Core.Commands
         {
             if (member is null || member == ctx.User)
             {
-                await ctx.EditResponseAsync("oh- oh my god you dont have anyone to crack..? damn i feel bad for you");
+                await ctx.RespondAsync("oh- oh my god you dont have anyone to crack..? damn i feel bad for you");
                 return;
             }
 
             if (member == ctx.Client.CurrentUser)
             {
-                await ctx.EditResponseAsync("you cant crack me im a clanker");
+                await ctx.RespondAsync("you cant crack me im a clanker");
                 return;
             }
 
@@ -123,13 +123,13 @@ namespace OZZOBot.Core.Commands
         {
             if (member is null || member == ctx.User)
             {
-                await ctx.EditResponseAsync("you dont have anyone to hug? fine...");
+                await ctx.RespondAsync("you dont have anyone to hug? fine...");
                 return;
             }
 
             if (member == ctx.Client.CurrentUser)
             {
-                await ctx.EditResponseAsync("fine...");
+                await ctx.RespondAsync("fine...");
                 return;
             }
 
@@ -174,13 +174,13 @@ namespace OZZOBot.Core.Commands
         {
             if (member is null || member == ctx.User)
             {
-                await ctx.EditResponseAsync("you dont have anyone to cuddle with? i dont exist");
+                await ctx.RespondAsync("you dont have anyone to cuddle with? i dont exist");
                 return;
             }
 
             if (member == ctx.Client.CurrentUser)
             {
-                await ctx.EditResponseAsync("im a clanker!!!!! IM NOT REAL!!!");
+                await ctx.RespondAsync("im a clanker!!!!! IM NOT REAL!!!");
                 return;
             }
 
